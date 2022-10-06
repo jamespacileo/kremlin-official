@@ -34,7 +34,7 @@ const Article: NextPage = () => {
     iframeRef?.click();
   }, [readyToPlay]);
 
-  const onPlayerReady = async (event: any) => {
+  const onPlayerReady: YouTubeProps["onReady"] = (event: any) => {
     // access to player in all event handlers via event.target
 
     // wait 5 seconds
@@ -130,7 +130,7 @@ const Article: NextPage = () => {
                 allowfullscreen: 1,
                 showinfo: 0,
               }}
-              onPlayerReady={onPlayerReady}
+              onReady={onPlayerReady}
             />
           </div>
         ) : null}
