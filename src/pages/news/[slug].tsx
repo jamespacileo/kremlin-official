@@ -11,7 +11,7 @@ import { NewsCard } from "../../components/NewsCard";
 import { Modal } from "../../components/Modal";
 import { SocialMediaIcons } from "../../components/SocialMediaIcons";
 import { useRouter } from "next/router";
-import Image from "next/image";
+import Image from "next/future/image";
 const Article: NextPage = (params) => {
   // get slug from params
   const router = useRouter();
