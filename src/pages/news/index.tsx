@@ -90,6 +90,21 @@ const Article: NextPage = () => {
         <meta name="twitter:site" content="Kremlin Official" />
         {/* twitter card creator */}
         <meta name="twitter:creator" content="Aleksei Kovalev" />
+
+        <meta property="og:article.author" content="Aleksei Kovalev" />
+        <meta
+          property="og:title"
+          content="Kremlin Official - Russia have finally nailed training"
+        />
+        <meta property="og:type" content="image.jpeg" />
+        <meta
+          property="og:url"
+          content="https://www.imdb.com/title/tt0117500/"
+        />
+        <meta
+          property="og:image"
+          content="https://i.postimg.cc/wMGJB69K/image.png"
+        />
       </Head>
       <NavBar />
       <main className="container items-center justify-center min-h-screen p-4 mx-auto">
