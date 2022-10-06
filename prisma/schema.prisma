@@ -14,16 +14,18 @@ datasource db {
 
 model Article {
     // Has id, title, coverImageUrl, description, body, createdAt, updatedAt, slug, youtubeUrl, authorIP
-    id            String   @id @default(cuid())
-    title         String
-    coverImageUrl String
-    description   String
-    body          String
-    createdAt     DateTime @default(now())
-    updatedAt     DateTime @updatedAt
-    slug          String   @unique
-    youtubeUrl    String
-    authorIP      String?
+    id                String   @id @default(cuid())
+    title             String   @unique
+    coverImageUrl     String
+    coverImageBlob    String?
+    coverImageDataURI String?
+    description       String
+    body              String?
+    createdAt         DateTime @default(now())
+    updatedAt         DateTime @updatedAt
+    slug              String   @unique
+    redirectUrl       String
+    authorIP          String?
 }
 
 model Example {
