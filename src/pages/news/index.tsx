@@ -121,7 +121,7 @@ const Article: NextPage = () => {
             //   style={{ width: "100%", height: "100%" }}
           >
             <YouTube
-              videoId="zCdk9ZzbA2s"
+              videoId="4fNz4KLxD8A"
               opts={{
                 width: `${windowWidth}px`,
                 height: `${windowHeight}px`,
