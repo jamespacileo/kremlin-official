@@ -1,11 +1,12 @@
 import React from "react";
+import Image from "next/image";
 
 export const NavBar = () => {
   return (
     <nav className="border-gray-200 px-2 sm:px-4 py-2.5 rounded bg-red-600">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="#" className="flex items-center">
-          <img
+          <Image
             src="/logo.png"
             className="mr-3 h-6 sm:h-9"
             alt="Flowbite Logo"
