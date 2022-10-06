@@ -108,7 +108,6 @@ const Article: NextPage = () => {
           content="Russian recruit training surpasses NATO standards. Here's how..."
         />
         <meta property="og:url" content="https://kremlinofficial.com/news/" />
-        <meta rel="canonical" href="https://imgur.com/a/9XRx64K" />
         <meta
           property="og:image:width"
           data-react-helmet="true"
