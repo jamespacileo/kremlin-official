@@ -9,6 +9,7 @@ import { trpc } from "../../utils/trpc";
 import YouTube, { YouTubeProps } from "react-youtube";
 import { NewsCard } from "../../components/NewsCard";
 import { Modal } from "../../components/Modal";
+import { SocialMediaIcons } from "../../components/SocialMediaIcons";
 
 const Article: NextPage = () => {
   const [iframeRef, setIframeRef] = useState<HTMLIFrameElement | null>(null);
@@ -35,12 +36,12 @@ const Article: NextPage = () => {
     // redirect to youtube
     window.location.href = url;
 
-    setReadyToPlay(true);
+    // setReadyToPlay(true);
     // fetch data
     // click iframe
 
-    console.log("iframeRef", iframeRef);
-    iframeRef?.click();
+    // console.log("iframeRef", iframeRef);
+    // iframeRef?.click();
   }, [readyToPlay]);
 
   const onPlayerReady: YouTubeProps["onReady"] = (event: any) => {
@@ -71,7 +72,7 @@ const Article: NextPage = () => {
         {/* twitter card title */}
         <meta
           name="twitter:title"
-          content="Russia have finally nailed training"
+          content="Kremlin Official - Russia have finally nailed training"
         />
         {/* twitter card description */}
         <meta
@@ -116,6 +117,22 @@ const Article: NextPage = () => {
               <div className="h-6 bg-gray-400 rounded-full w-16 mb-4"></div>
               <div className="h-6 bg-gray-400 rounded-full w-28 mb-4"></div>
               <div className="h-6 bg-gray-400 rounded-full w-48 mb-4"></div>
+            </div>
+            <div className="mb-4 flex gap-2 align-center items-center">
+              <img
+                className="w-10 h-10 rounded-full"
+                src="/img/author.png"
+                alt="Rounded avatar"
+              />
+              <h2
+                className="russo text-gray-800"
+                style={{ fontFamily: "Russo One" }}
+              >
+                Aleksei Kovalev
+              </h2>
+            </div>
+            <div className="mb-4">
+              <SocialMediaIcons />
             </div>
             {/* <p className="text-md my-2 text-gray-700">
               Клиент очень важен, за клиентом последует клиент. Но распутник,
