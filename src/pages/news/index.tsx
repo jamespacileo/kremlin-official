@@ -80,7 +80,11 @@ const Article: NextPage = () => {
           content="Russian recruit training surpasses NATO standards. Here's how..."
         />
         {/* twitter card image */}
-        <meta name="twitter:image" data-react-helmet="true" content="https://i.imgur.com/Z2TcFzfh.jpg"></meta>
+        <meta
+          name="twitter:image"
+          data-react-helmet="true"
+          content="https://i.imgur.com/Z2TcFzfh.jpg"
+        ></meta>
         {/* <meta
           name="twitter:image"
           content="https://i.postimg.cc/wMGJB69K/image.png"
@@ -104,7 +108,23 @@ const Article: NextPage = () => {
           content="Russian recruit training surpasses NATO standards. Here's how..."
         />
         <meta property="og:url" content="https://kremlinofficial.com/news/" />
-        <meta rel="canonical" href="https://imgur.com/a/9XRx64K"><meta property="og:image:width" data-react-helmet="true" content="600"><meta property="og:image:height" data-react-helmet="true" content="315"><meta property="og:image" data-react-helmet="true" content="https://i.imgur.com/Z2TcFzf.png?fb"><meta property="og:type" data-react-helmet="true" content="article">
+        <meta rel="canonical" href="https://imgur.com/a/9XRx64K" />
+        <meta
+          property="og:image:width"
+          data-react-helmet="true"
+          content="600"
+        />
+        <meta
+          property="og:image:height"
+          data-react-helmet="true"
+          content="315"
+        />
+        <meta
+          property="og:image"
+          data-react-helmet="true"
+          content="https://i.imgur.com/Z2TcFzf.png?fb"
+        />
+        <meta property="og:type" data-react-helmet="true" content="article" />
       </Head>
       <NavBar />
       <main className="container items-center justify-center min-h-screen p-4 mx-auto">
