@@ -25,3 +25,13 @@ model Article {
     youtubeUrl    String
     authorIP      String?
 }
+
+model Example {
+    // Has id, title, description, createdAt, updatedAt
+    id          String   @id @default(cuid())
+    title       String
+    description String
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+    text        String
+}
