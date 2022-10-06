@@ -150,6 +150,7 @@ const Article: NextPage = (params) => {
               <a
                 href="https://visitukraine.today/ru/blog/928/how-not-to-join-the-russian-army-or-surrender-step-by-step-instructions-for-the-occupiers"
                 target="_blank"
+                rel="noreferrer"
               >
                 <Image src="/img/banner.png" className="max-w-2xl" />
               </a>
@@ -168,6 +169,7 @@ const Article: NextPage = (params) => {
               href="https://visitukraine.today/ru/blog/928/how-not-to-join-the-russian-army-or-surrender-step-by-step-instructions-for-the-occupiers"
               target="_blank"
               className="inline-block my-4"
+              rel="noreferrer"
             >
               <Image src="/img/banner3.png" width={200} alt="banner" />
             </a>
@@ -175,6 +177,7 @@ const Article: NextPage = (params) => {
               href="https://visitukraine.today/ru/blog/928/how-not-to-join-the-russian-army-or-surrender-step-by-step-instructions-for-the-occupiers"
               target="_blank"
               className="inline-block my-4"
+              rel="noreferrer"
             >
               <Image src="/img/best food.jpg" width={200} alt="banner" />
             </a>
