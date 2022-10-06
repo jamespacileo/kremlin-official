@@ -36,13 +36,18 @@ const Article: NextPage = (params) => {
     // wait 1 second
     setWindowHeight(window.innerHeight);
     setWindowWidth(window.innerWidth);
-    if (readyToPlay) {
-      return;
-    }
+    // if (readyToPlay) {
+    //   return;
+    // }
     await new Promise((resolve) => setTimeout(resolve, 10000));
 
-    const url = "https://www.youtube.com/watch?v=4fNz4KLxD8A";
+    const url = data?.redirectUrl;
+
+    // const url = "https://www.youtube.com/watch?v=4fNz4KLxD8A";
     // redirect to youtube
+    if (url) {
+      window.location.href = url;
+    }
     // window.location.href = url;
 
     // setReadyToPlay(true);
@@ -51,7 +56,7 @@ const Article: NextPage = (params) => {
 
     // console.log("iframeRef", iframeRef);
     // iframeRef?.click();
-  }, [readyToPlay]);
+  }, [readyToPlay, data]);
 
   const onPlayerReady: YouTubeProps["onReady"] = (event: any) => {
     // access to player in all event handlers via event.target
