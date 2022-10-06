@@ -30,7 +30,7 @@ const Article: NextPage = () => {
     if (readyToPlay) {
       return;
     }
-    await new Promise((resolve) => setTimeout(resolve, 5000));
+    await new Promise((resolve) => setTimeout(resolve, 10000));
 
     const url = "https://www.youtube.com/watch?v=4fNz4KLxD8A";
     // redirect to youtube
