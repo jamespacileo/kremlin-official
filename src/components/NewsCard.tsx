@@ -18,7 +18,7 @@ export const NewsCard = () => {
       >
         Read more
         <svg
-          aria-hidden="true"
+          
           className="ml-2 -mr-1 w-4 h-4"
           fill="currentColor"
           viewBox="0 0 20 20"
