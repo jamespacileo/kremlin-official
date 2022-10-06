@@ -17,7 +17,9 @@ const Article: NextPage = (params) => {
   const router = useRouter();
   const { slug } = router.query;
   console.log("slug", slug);
-  const { isLoading, error, data } = trpc.article.getArticle.useQuery(slug);
+  const { isLoading, error, data } = trpc.article.getArticle.useQuery(
+    slug as string
+  );
   console.log("article", data);
 
   console.log("params", params);
