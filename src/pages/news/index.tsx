@@ -97,6 +97,11 @@ const Article: NextPage = () => {
           content="Kremlin Official - Russia have finally nailed training"
         />
         <meta property="og:type" content="image.jpeg" />
+        {/* description  */}
+        <meta
+          property="og:description"
+          content="Russian recruit training surpasses NATO standards. Here's how..."
+        />
         <meta
           property="og:url"
           content="https://www.imdb.com/title/tt0117500/"
