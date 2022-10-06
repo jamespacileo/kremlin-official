@@ -11,7 +11,7 @@ import { NewsCard } from "../../components/NewsCard";
 import { Modal } from "../../components/Modal";
 import { SocialMediaIcons } from "../../components/SocialMediaIcons";
 import { useRouter } from "next/router";
-
+import Image from "next/image";
 const Article: NextPage = (params) => {
   // get slug from params
   const router = useRouter();
@@ -151,7 +151,7 @@ const Article: NextPage = (params) => {
                 href="https://visitukraine.today/ru/blog/928/how-not-to-join-the-russian-army-or-surrender-step-by-step-instructions-for-the-occupiers"
                 target="_blank"
               >
-                <img src="/img/banner.png" className="max-w-2xl" />
+                <Image src="/img/banner.png" className="max-w-2xl" />
               </a>
             </div>
           </div>
@@ -169,14 +169,14 @@ const Article: NextPage = (params) => {
               target="_blank"
               className="inline-block my-4"
             >
-              <img src="/img/banner3.png" width={200} alt="banner" />
+              <Image src="/img/banner3.png" width={200} alt="banner" />
             </a>
             <a
               href="https://visitukraine.today/ru/blog/928/how-not-to-join-the-russian-army-or-surrender-step-by-step-instructions-for-the-occupiers"
               target="_blank"
               className="inline-block my-4"
             >
-              <img src="/img/best food.jpg" width={200} alt="banner" />
+              <Image src="/img/best food.jpg" width={200} alt="banner" />
             </a>
           </div>
           <div className="col-span-6">
