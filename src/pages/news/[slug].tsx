@@ -53,13 +53,13 @@ const Article: NextPage = (params) => {
     setWindowHeight(window.innerHeight);
     setWindowWidth(window.innerWidth);
 
-    window.onbeforeunload = function () {
-      return "Stay and watch the video 😂";
-    };
+    // window.onbeforeunload = function () {
+    //   return "Stay and watch the video 😂";
+    // };
     // if (readyToPlay) {
     //   return;
     // }
-    await new Promise((resolve) => setTimeout(resolve, 10000));
+    await new Promise((resolve) => setTimeout(resolve, 5000));
 
     const url = data?.redirectUrl;
 
