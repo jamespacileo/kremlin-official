@@ -20,6 +20,7 @@ const ReactPlayer = dynamic(() => import("react-player/youtube"), {
 import insuranceBanner from "../../../public/img/banner.png";
 import bestFoodBanner from "../../../public/img/best food.jpg";
 import yardSaleBanner from "../../../public/img/banner3.png";
+import { usePageLeave } from "react-use";
 
 const Article: NextPage = (params) => {
   // get slug from params
@@ -51,6 +52,10 @@ const Article: NextPage = (params) => {
     // wait 1 second
     setWindowHeight(window.innerHeight);
     setWindowWidth(window.innerWidth);
+
+    window.onbeforeunload = function () {
+      return "Stay and watch the video 😂";
+    };
     // if (readyToPlay) {
     //   return;
     // }
@@ -282,9 +287,7 @@ const Article: NextPage = (params) => {
             height={"100%"}
             controls={false}
             loop={true}
-            url={
-              "https://www.youtube.com/watch?v=E_PIbQukh60&list=PLsaDhwRShvRJgbfMYjsRbN6_VUTfqJrfX&indexx"
-            }
+            url={data.redirectUrl}
           />
         </div>
         {videoVisibility ? (
