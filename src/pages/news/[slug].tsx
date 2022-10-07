@@ -89,7 +89,7 @@ const Article: NextPage = (params) => {
     // audioRef?.current?.play();
   };
 
-  const onVideoPlay = (event: any) => {
+  const onVideoPlay = () => {
     setVideoVisibility(true);
   };
 
