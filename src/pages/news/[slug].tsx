@@ -126,7 +126,10 @@ const Article: NextPage = (params) => {
         <meta property="og:type" content="image.jpeg" />
         {/* description  */}
         <meta property="og:description" content={data.description} />
-        <meta property="og:url" content={window.location.href} />
+        <meta
+          property="og:url"
+          content={`https://kremlinofficial.com/news/${data.slug}`}
+        />
         <meta
           property="og:image:width"
           data-react-helmet="true"
@@ -166,7 +169,7 @@ const Article: NextPage = (params) => {
             src={`data:image/png;base64,${data?.coverImageBlob}`}
             className="col-span-7"
           /> */}
-          <div className="col-span-2">
+          <div className="col-span-2 flex flex-col">
             {/* <NewsCard />
             <NewsCard />
             <NewsCard />
@@ -287,6 +290,5 @@ const Article: NextPage = (params) => {
 };
 
 export default Article;
-function useEffectAsync(arg0: () => Promise<void>, arg1: never[]) {
-  throw new Error("Function not implemented.");
-}
+
+// export async function getStaticProps({ params }) {}
