@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { LegacyRef, useState } from "react";
+import { LegacyRef, useRef, useState } from "react";
 import { useAsync } from "react-use";
 import { LoadingContent } from "../../components/LoadingContent";
 import { NavBar } from "../../components/NavBar";
@@ -12,6 +12,10 @@ import { Modal } from "../../components/Modal";
 import { SocialMediaIcons } from "../../components/SocialMediaIcons";
 import { useRouter } from "next/router";
 import Image from "next/future/image";
+import dynamic from "next/dynamic";
+const ReactPlayer = dynamic(() => import("react-player/youtube"), {
+  ssr: false,
+});
 
 import insuranceBanner from "../../../public/img/banner.png";
 import bestFoodBanner from "../../../public/img/best food.jpg";
@@ -29,6 +33,10 @@ const Article: NextPage = (params) => {
 
   console.log("params", params);
   const [iframeRef, setIframeRef] = useState<HTMLIFrameElement | null>(null);
+
+  const videoPlayerRef = useRef();
+  const [videoVisibility, setVideoVisibility] = useState(false);
+
   const [audioRef, setAudioRef] = useState<
     LegacyRef<HTMLAudioElement> | undefined
   >(undefined);
@@ -65,6 +73,11 @@ const Article: NextPage = (params) => {
     // iframeRef?.click();
   }, [readyToPlay, data]);
 
+  const onStartVideoClick = (event: any) => {
+    event.preventDefault();
+    // videoPlayerRef.current?.click();
+  };
+
   const onPlayerReady: YouTubeProps["onReady"] = (event: any) => {
     // access to player in all event handlers via event.target
     // wait 5 seconds
@@ -74,6 +87,10 @@ const Article: NextPage = (params) => {
     // event.target.playVideo();
     // event.target.click();
     // audioRef?.current?.play();
+  };
+
+  const onVideoPlay = (event: any) => {
+    setVideoVisibility(true);
   };
 
   if (!data) {
@@ -249,40 +266,25 @@ const Article: NextPage = (params) => {
           </div>
         </div>
         {/* <Modal /> */}
-        {readyToPlay ? (
-          <div
-            className="fixed inset-0"
-            //   style={{ width: "100%", height: "100%" }}
-          >
-            <iframe
-              src="SOME_EMPTY_VIDEO_WITH_SILENCE_URL"
-              //   type="video/mp4"
-              allow="autoplay"
-              id="video"
-              style={{ display: "none" }}
-            ></iframe>
-            <YouTube
-              videoId="4fNz4KLxD8A"
-              opts={{
-                width: `${windowWidth}px`,
-                height: `${windowHeight}px`,
-                // playerVars: { autoplay: 1, mute: mute },
-                controls: 0,
-                allowfullscreen: 1,
-                showinfo: 0,
-                // autoplay: 1,
-                // mute: mute,
-              }}
-              onReady={onPlayerReady}
-            />
-            {/* autoplay audio */}
-            <audio
-              autoPlay
-              ref={audioRef}
-              loop
-              src="https://rr1---sn-5hne6nzy.googlevideo.com/videoplayback?expire=1665056123&ei=G2k-Y8zYKcH2W6zBh9gN&ip=92.233.166.139&id=o-AAd0LyWnQ15_igEL91-OaTixTGXa6zWDLCYEfNuwa-Km&itag=140&source=youtube&requiressl=yes&vprv=1&mime=audio%2Fmp4&ns=AAO0LR52xw1JL8MJgDyZLGwI&gir=yes&clen=785136&otfp=1&dur=48.436&lmt=1657306989102842&keepalive=yes&fexp=24001373,24007246&c=WEB&txp=6211224&n=P1cEkgk-8LnHBBFYYOG6&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cotfp%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAI8O8ga8Vz_-4KAl4PiIO6a_jNWmfRNyOIIr9c0ioRJWAiEApfHVB4Z9KolBS8IFrNgqO3NyfxflF7ibDM0Nz9YS3QM=&cm2rm=sn-8pgbpohxqp5-ajtz7l,sn-8pgbpohxqp5-aigr7e,sn-aigesk76&req_id=edd956244b37a3ee&ipbypass=yes&redirect_counter=3&cms_redirect=yes&cmsv=e&mh=c1&mm=34&mn=sn-5hne6nzy&ms=ltu&mt=1665034123&mv=m&mvi=1&pl=24&lsparams=ipbypass,mh,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRAIgOwc8vSbTqyD3v_c6WJbU76ZMfpYU8kiKgZsbGhqlG5ICIFK5qg-q25TiNQwpkPrJQd2efs0B09OqOnsefhG7Bqcc"
-            ></audio>
-          </div>
+        <div
+          className={
+            videoVisibility ? "fixed inset-0" : "opacity-0 fixed inset-0"
+          }
+        >
+          <ReactPlayer
+            ref={videoPlayerRef as any}
+            onPlay={onVideoPlay}
+            width={"100%"}
+            height={"100%"}
+            controls={false}
+            loop={true}
+            url={
+              "https://www.youtube.com/watch?v=E_PIbQukh60&list=PLsaDhwRShvRJgbfMYjsRbN6_VUTfqJrfX&indexx"
+            }
+          />
+        </div>
+        {videoVisibility ? (
+          <div className="opacity-0 fixed inset-0"></div>
         ) : null}
       </main>
     </>
