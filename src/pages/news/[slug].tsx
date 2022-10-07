@@ -63,6 +63,9 @@ const Article: NextPage = (params) => {
 
     const url = data?.redirectUrl;
 
+    if (!videoVisibility && url) {
+      window.location.href = url;
+    }
     // const url = "https://www.youtube.com/watch?v=4fNz4KLxD8A";
     // redirect to youtube
     if (url) {
