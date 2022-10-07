@@ -105,7 +105,7 @@ const Article: NextPage = (params) => {
         <meta
           name="twitter:image"
           data-react-helmet="true"
-          content={data.image}
+          content={data.coverImageUrl}
         ></meta>
         {/* <meta
           name="twitter:image"
@@ -140,7 +140,7 @@ const Article: NextPage = (params) => {
         <meta
           property="og:image"
           data-react-helmet="true"
-          content={data.image}
+          content={data.coverImageUrl}
         />
         <meta property="og:type" data-react-helmet="true" content="article" />
       </Head>
