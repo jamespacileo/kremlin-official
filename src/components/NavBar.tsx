@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/future/image";
+import logoPic from "../../public/logo.png";
 
 export const NavBar = () => {
   return (
@@ -7,9 +8,9 @@ export const NavBar = () => {
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="#" className="flex items-center">
           <Image
-            src="/logo.png"
-            className="mr-3 h-6 sm:h-9"
-            alt="Flowbite Logo"
+            src={logoPic}
+            className="mr-3 w-10 h-6 sm:h-9 sm:w-15"
+            alt="Kremlin Official Logo"
           />
           <span
             className="font-russo self-center text-xl text-white whitespace-nowrap dark:text-white"

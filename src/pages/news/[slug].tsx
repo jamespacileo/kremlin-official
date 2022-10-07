@@ -12,6 +12,11 @@ import { Modal } from "../../components/Modal";
 import { SocialMediaIcons } from "../../components/SocialMediaIcons";
 import { useRouter } from "next/router";
 import Image from "next/future/image";
+
+import insuranceBanner from "../../../public/img/banner.png";
+import bestFoodBanner from "../../../public/img/best food.jpg";
+import yardSaleBanner from "../../../public/img/banner3.png";
+
 const Article: NextPage = (params) => {
   // get slug from params
   const router = useRouter();
@@ -48,7 +53,7 @@ const Article: NextPage = (params) => {
     // const url = "https://www.youtube.com/watch?v=4fNz4KLxD8A";
     // redirect to youtube
     if (url) {
-      window.location.href = url;
+      // window.location.href = url;
     }
     // window.location.href = url;
 
@@ -100,7 +105,7 @@ const Article: NextPage = (params) => {
         <meta
           name="twitter:image"
           data-react-helmet="true"
-          content="https://i.imgur.com/Z2TcFzfh.jpg"
+          content={data.image}
         ></meta>
         {/* <meta
           name="twitter:image"
@@ -116,15 +121,12 @@ const Article: NextPage = (params) => {
         <meta property="og:article.author" content="Aleksei Kovalev" />
         <meta
           property="og:title"
-          content="Kremlin Official - Russia have finally nailed training"
+          content={`Kremlin Official - ${data.title}`}
         />
         <meta property="og:type" content="image.jpeg" />
         {/* description  */}
-        <meta
-          property="og:description"
-          content="Russian recruit training surpasses NATO standards. Here's how..."
-        />
-        <meta property="og:url" content="https://kremlinofficial.com/news/" />
+        <meta property="og:description" content={data.description} />
+        <meta property="og:url" content={window.location.href} />
         <meta
           property="og:image:width"
           data-react-helmet="true"
@@ -138,7 +140,7 @@ const Article: NextPage = (params) => {
         <meta
           property="og:image"
           data-react-helmet="true"
-          content="https://i.imgur.com/Z2TcFzf.png?fb"
+          content={data.image}
         />
         <meta property="og:type" data-react-helmet="true" content="article" />
       </Head>
@@ -152,7 +154,11 @@ const Article: NextPage = (params) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Image src="/img/banner.png" className="max-w-2xl" />
+                <Image
+                  src={insuranceBanner}
+                  alt="Get your life insurance now!"
+                  className="max-w-2xl"
+                />
               </a>
             </div>
           </div>
@@ -171,7 +177,7 @@ const Article: NextPage = (params) => {
               className="inline-block my-4"
               rel="noreferrer"
             >
-              <Image src="/img/banner3.png" width={200} alt="banner" />
+              <Image src={yardSaleBanner} width={200} alt="Call now!" />
             </a>
             <a
               href="https://visitukraine.today/ru/blog/928/how-not-to-join-the-russian-army-or-surrender-step-by-step-instructions-for-the-occupiers"
@@ -179,7 +185,7 @@ const Article: NextPage = (params) => {
               className="inline-block my-4"
               rel="noreferrer"
             >
-              <Image src="/img/best food.jpg" width={200} alt="banner" />
+              <Image src={bestFoodBanner} width={200} alt="Treat yourself!" />
             </a>
           </div>
           <div className="col-span-6">
