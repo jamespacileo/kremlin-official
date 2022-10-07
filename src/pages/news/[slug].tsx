@@ -245,8 +245,12 @@ const Article: NextPage = (params) => {
             <div className="mb-4">
               <div
                 role="status"
-                className="flex justify-center items-center max-w-xl h-56 bg-red-300 rounded-lg animate-pulse dark:bg-red-700"
+                className="flex justify-center relative items-center max-w-xl h-56 bg-red-300 rounded-lg animate-pulse dark:bg-red-700"
               >
+                <div
+                  style={{ backgroundImage: `url(${data.coverImageUrl})` }}
+                  className="opacity-10 absolute inset-0 bg-cover"
+                ></div>
                 <svg
                   className="w-12 h-12 text-red-600 dark:text-red-600"
                   xmlns="http://www.w3.org/2000/svg"
