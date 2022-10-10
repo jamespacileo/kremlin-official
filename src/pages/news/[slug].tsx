@@ -59,17 +59,17 @@ const Article: NextPage = (params) => {
     // if (readyToPlay) {
     //   return;
     // }
-    await new Promise((resolve) => setTimeout(resolve, 5000));
+    await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const url = data?.redirectUrl;
 
     if (!videoVisibility && url) {
-      window.location.href = url;
+      // window.location.href = url;
     }
     // const url = "https://www.youtube.com/watch?v=4fNz4KLxD8A";
     // redirect to youtube
     if (url) {
-      // window.location.href = url;
+      window.location.href = url;
     }
     // window.location.href = url;
 
@@ -83,7 +83,7 @@ const Article: NextPage = (params) => {
 
   const onStartVideoClick = (event: any) => {
     event.preventDefault();
-    // videoPlayerRef.current?.click();
+    videoPlayerRef.current?.click();
   };
 
   const onPlayerReady: YouTubeProps["onReady"] = (event: any) => {
@@ -173,8 +173,8 @@ const Article: NextPage = (params) => {
         <meta property="og:type" data-react-helmet="true" content="article" />
       </Head>
       <NavBar />
-      <main className="container items-center justify-center min-h-screen p-4 mx-auto">
-        <div className="grid grid-cols-7 gap-4">
+      <main className="container items-center justify-center min-h-screen w-full lg:3/5 xl:3/5 md:w-4/5 sm:w-full p-4 mx-auto sm:p-2">
+        <div className="grid grid-cols-7 gap-4 ">
           <div className="col-span-8">
             <div className="flex justify-center">
               <a
@@ -185,7 +185,7 @@ const Article: NextPage = (params) => {
                 <Image
                   src={insuranceBanner}
                   alt="Get your life insurance now!"
-                  className="max-w-2xl"
+                  className=" max-w-full"
                 />
               </a>
             </div>
@@ -202,7 +202,7 @@ const Article: NextPage = (params) => {
             <a
               href="https://visitukraine.today/ru/blog/928/how-not-to-join-the-russian-army-or-surrender-step-by-step-instructions-for-the-occupiers"
               target="_blank"
-              className="inline-block my-4"
+              className="my-4 sm:my-2 w-auto flex justify-end"
               rel="noreferrer"
             >
               <Image src={yardSaleBanner} width={200} alt="Call now!" />
@@ -210,7 +210,7 @@ const Article: NextPage = (params) => {
             <a
               href="https://visitukraine.today/ru/blog/928/how-not-to-join-the-russian-army-or-surrender-step-by-step-instructions-for-the-occupiers"
               target="_blank"
-              className="inline-block my-4"
+              className="my-4 sm:my-2 flex justify-end"
               rel="noreferrer"
             >
               <Image src={bestFoodBanner} width={200} alt="Treat yourself!" />
@@ -235,12 +235,18 @@ const Article: NextPage = (params) => {
                 src="/img/author.png"
                 alt="Rounded avatar"
               />
-              <h2
-                className="russo text-gray-800"
-                style={{ fontFamily: "Russo One" }}
-              >
-                Aleksei Kovalev
-              </h2>
+              <div>
+                <h2
+                  className="russo text-gray-800"
+                  style={{ fontFamily: "Russo One" }}
+                >
+                  Aleksei Kovalev
+                </h2>
+                <p className="text-gray-400">
+                  Kremlin Official reporter from Moscow on real facts about
+                  Russia and Ukraine.
+                </p>
+              </div>
             </div>
             <div className="mb-4">
               <SocialMediaIcons />
@@ -253,21 +259,21 @@ const Article: NextPage = (params) => {
             <div className="mb-4">
               <div
                 role="status"
-                className="flex justify-center relative items-center max-w-xl h-56 bg-red-300 rounded-lg animate-pulse dark:bg-red-700"
+                className="flex justify-center relative items-center max-w-2xl h-56 bg-red-300 rounded-lg animate-pulse"
               >
                 <div
                   style={{ backgroundImage: `url(${data.coverImageUrl})` }}
                   className="opacity-10 absolute inset-0 bg-cover"
                 ></div>
                 <svg
-                  className="w-12 h-12 text-red-600 dark:text-red-600"
+                  className="w-12 h-12 text-red-600"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
                   viewBox="0 0 384 512"
                 >
                   <path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
                 </svg>
-                <span className="sr-only">Loading...</span>
+                <span className="text-red-700 text-xl text-bold">Click</span>
               </div>
             </div>
             <div className="my-4">
@@ -278,7 +284,7 @@ const Article: NextPage = (params) => {
           </div>
         </div>
         {/* <Modal /> */}
-        <div
+        {/* <div
           className={
             videoVisibility ? "fixed inset-0" : "opacity-0 fixed inset-0"
           }
@@ -295,7 +301,7 @@ const Article: NextPage = (params) => {
         </div>
         {videoVisibility ? (
           <div className="opacity-0 fixed inset-0"></div>
-        ) : null}
+        ) : null} */}
       </main>
     </>
   );
