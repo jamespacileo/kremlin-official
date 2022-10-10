@@ -17,7 +17,7 @@ export const NavBar = () => {
             className="font-russo self-center text-xl text-white whitespace-nowrap dark:text-white"
             style={{ fontFamily: "Russo One" }}
           >
-            Кремль официальный
+            Официальный Кремль
           </span>
         </a>
         <button
