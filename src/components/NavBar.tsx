@@ -9,7 +9,7 @@ export const NavBar = () => {
         <a href="#" className="flex items-center">
           <Image
             src={logoPic}
-            className="w-14 w-auto"
+            className="w-14 h-auto"
             // className="mr-3 w-18 h-6 sm:h-9 sm:w-16"
             alt="Kremlin Official Logo"
           />
