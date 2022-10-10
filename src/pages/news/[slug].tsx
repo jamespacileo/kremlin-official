@@ -81,10 +81,10 @@ const Article: NextPage = (params) => {
     // iframeRef?.click();
   }, [readyToPlay, data]);
 
-  const onStartVideoClick = (event: any) => {
-    event.preventDefault();
-    videoPlayerRef.current?.click();
-  };
+  // const onStartVideoClick = (event: any) => {
+  //   event.preventDefault();
+  //   videoPlayerRef.current?.click();
+  // };
 
   const onPlayerReady: YouTubeProps["onReady"] = (event: any) => {
     // access to player in all event handlers via event.target
