@@ -30,42 +30,33 @@ const Home: NextPage = () => {
       </Head>
       <main className="container flex flex-col items-center justify-center  min-h-screen p-4 mx-auto">
         <Image src={nafoBanner} alt="NAFO Banner" />
-        <h1 className="text-5xl md:text-[5rem] leading-normal font-extrabold text-gray-700">
-          #NAFO
-        </h1>
         <p className="text-2xl text-gray-700 text-center">
           We are just a bunch of simple fellas. ❤️
         </p>
-        <p className="text-2xl text-gray-700 my-4 text-center">
-          Our goal is to support and uplift our beloved Ukranians and fight
-          disinformation by thinking outside the box.
-          <br />
-          If you empathize with the cause you can be a fella too. 🤗
-        </p>
         <div className="mt-4">
-          <video
-            width="600"
-            height="300"
-            controls
-            poster="/img/who-are-the-fellas.jpg"
-          >
-            <source src="/video/intro.mp4" type="video/mp4" />
-          </video>
+          <ul>
+            <li><a href="https://www.youtube.com/watch?v=NFy7A18yXLM">Who Are The Fellas?</a></li>
+            <li><a href="https://www.youtube.com/watch?v=Fq8Fi1Qs__M">NAFO News</a></li>
+            <li><a href="https://linktr.ee/wearenafo">Support the Georgian Legion </a></li>
+            <li><a href="https://u24.gov.ua">Support Ukraine</a></li>
+          </ul>
           {/* <ReactPlayer file={"/video/intro.mp4"} light={true} /> */}
+          <style jsx>{`
+            ul {
+              display: block;
+            }
+            li {
+              display: inline-block;
+              margin: 0;
+              padding: 0 .5em;
+              border-left: 1px black solid;
+            }
+            li:first-child {
+              border-left: 0;
+            }
+
+            `}</style>
         </div>
-        <h2 className="text-3xl mt-20 mb-4 md:text-[3rem] leading-normal font-extrabold text-gray-700">
-          What is #NAFO #KO (Kremlin Online)?
-        </h2>
-        <p className="text-2xl text-gray-700 text-center">
-          A new technique at tackling disinformation with the potential of
-          educating people unaware of war crimes and atrocities committed by the
-          Russian Federation.
-        </p>
-        <p className="text-2xl my-2 text-gray-700 text-center">
-          Similar to rickrolling, we are using the same technique to educate by
-          exposing people to educational content... or just plain jokes on the
-          superiority of the Ukranian army.
-        </p>
         <div className="my-20"></div>
         {/* <div className="grid gap-3 pt-3 mt-3 text-center md:grid-cols-2 lg:w-2/3">
           <img src="/img/banner3.png" alt="banner" />
